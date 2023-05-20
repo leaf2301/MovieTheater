@@ -9,10 +9,10 @@ import SwiftUI
 
 extension View {
     
-    static var ItemWidth: CGFloat {
+    var screenWidth: CGFloat {
         UIScreen.main.bounds.width
     }
-    static var ItemHeight: CGFloat {
+    var screenHeight: CGFloat {
         UIScreen.main.bounds.height
     }
 }

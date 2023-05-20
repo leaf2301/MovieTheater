@@ -32,9 +32,7 @@ struct MovieSearchBar: View {
             .background(
                 RoundedRectangle(cornerRadius: 15, style: .continuous)
                     .fill(Color.AppGrayColor1)
-            )
-            .padding()
-            
+            )            
     }
 }
 
