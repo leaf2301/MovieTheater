@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E13714D02A19DE41004C6FCC /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13714CF2A19DE41004C6FCC /* GenreModel.swift */; };
+		E13714D22A19DEBA004C6FCC /* GenreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13714D12A19DEBA004C6FCC /* GenreCard.swift */; };
 		E19988122A193F9F009983D2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19988112A193F9F009983D2 /* Endpoint.swift */; };
 		E19988142A193FA7009983D2 /* ApiConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19988132A193FA7009983D2 /* ApiConstructor.swift */; };
 		E19988162A193FB5009983D2 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19988152A193FB5009983D2 /* URLBuilder.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E13714CF2A19DE41004C6FCC /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
+		E13714D12A19DEBA004C6FCC /* GenreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCard.swift; sourceTree = "<group>"; };
 		E19988112A193F9F009983D2 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		E19988132A193FA7009983D2 /* ApiConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstructor.swift; sourceTree = "<group>"; };
 		E19988152A193FB5009983D2 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				E1BA2EEB2A17B70900CBA3A0 /* MovieModel.swift */,
+				E13714CF2A19DE41004C6FCC /* GenreModel.swift */,
 			);
 			path = HomeModel;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				E1BA2EF92A17B90C00CBA3A0 /* MovieSearchBar.swift */,
+				E13714D12A19DEBA004C6FCC /* GenreCard.swift */,
 				E1BA2EFD2A18A5EC00CBA3A0 /* CustomImage.swift */,
 				E1BA2EFF2A18A6FC00CBA3A0 /* MovieCard.swift */,
 			);
@@ -268,12 +274,14 @@
 			files = (
 				E1BA2EF82A17B8E700CBA3A0 /* HomeView.swift in Sources */,
 				E1DEB6A42A127879005CD08A /* ContentView.swift in Sources */,
+				E13714D02A19DE41004C6FCC /* GenreModel.swift in Sources */,
 				E1BA2EFE2A18A5EC00CBA3A0 /* CustomImage.swift in Sources */,
 				E1BA2EE62A17B60000CBA3A0 /* Image.swift in Sources */,
 				E19988122A193F9F009983D2 /* Endpoint.swift in Sources */,
 				E1BA2EEC2A17B70900CBA3A0 /* MovieModel.swift in Sources */,
 				E19988182A193FC0009983D2 /* MovieService.swift in Sources */,
 				E1BA2F002A18A6FC00CBA3A0 /* MovieCard.swift in Sources */,
+				E13714D22A19DEBA004C6FCC /* GenreCard.swift in Sources */,
 				E1DEB6A22A127879005CD08A /* MovieTheaterApp.swift in Sources */,
 				E1BA2EF02A17B76B00CBA3A0 /* Constants.swift in Sources */,
 				E19988162A193FB5009983D2 /* URLBuilder.swift in Sources */,

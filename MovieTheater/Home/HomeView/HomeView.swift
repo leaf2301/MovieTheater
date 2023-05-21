@@ -15,12 +15,18 @@ struct HomeView: View {
     
     @StateObject var vm = HomeViewModel()
     
+    @Namespace var namespace
+ 
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             
             LazyVStack(alignment: .leading, spacing: 20) {
                 Text("What do you want to watch?")
+                
                 MovieSearchBar(txt: $searchText)
+                
+                Text(vm.errorMsg)
 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
@@ -30,9 +36,26 @@ struct HomeView: View {
                     }
                 }
                 
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(vm.genre) { gen in
+                            GenreCard(genre: gen, namespace: namespace, selectedGenre: $vm.selectedGenre)
+                                .onTapGesture {
+                                    withAnimation(.spring()) {
+                                        vm.selectedGenre = gen
+                                    }
+                                    Task {
+                                        await vm.fetchMoviesForSelectedGenre()
+                                    }
+                                }
+                        }
+                    }
+                    
+                }
+                
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(vm.topRatedMovies) {
-                        MovieCard(movie: $0, type: .grid)
+                    ForEach(vm.moviesForSelectedGenre) { movie in
+                        MovieCard(movie: movie, type: .grid)
                     }
                 }
             }

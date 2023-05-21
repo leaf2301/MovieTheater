@@ -28,3 +28,10 @@ enum UrlBuilder {
         params.flatMap{$0}.map { URLQueryItem(name: $0.key, value: $0.value) }
     }
 }
+
+
+
+
+// https://api.themoviedb.org /3/genre/movie/list ?api_key=e00f0369ab2e8426b3afb4ba934a6eb3
+// https://api.themoviedb.org/3/discover/movie?api_key=e00f0369ab2e8426b3afb4ba934a6eb3
+

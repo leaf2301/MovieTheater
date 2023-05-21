@@ -31,5 +31,7 @@ class DeveloperPreview {
                                      voteCount: 12278,
                                      video: false,
                                      voteAverage: 8.7)
+    
+    let genreInstance = Genre(id: 28, name: "Action")
 
 }

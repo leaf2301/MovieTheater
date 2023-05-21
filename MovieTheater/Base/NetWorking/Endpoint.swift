@@ -8,7 +8,8 @@
 import Foundation
 
 enum Endpoint {
-    case trending, topRated, movieReviews(_ movieId: Int)
+    case trending, topRated, movieReviews(_ movieId: Int), genre
+    case discoverMovies
     
     
     
@@ -20,6 +21,10 @@ enum Endpoint {
             return "/3/movie/top_rated"
         case .movieReviews(let movieId):
             return "/3/movie/\(movieId)reviews"
+        case .genre:
+            return "/3/genre/movie/list"
+        case .discoverMovies:
+            return "/3/discover/movie"
         }
     }
     
