@@ -17,6 +17,8 @@ class HomeViewModel: ObservableObject {
     @Published var selectedGenre = DeveloperPreview.instance.genreInstance
     
     @Published var moviesForSelectedGenre: [Movie] = []
+    @Published var selectedmovie: Movie? = nil
+    
     
     private let service = MovieService()
     
@@ -51,9 +53,6 @@ class HomeViewModel: ObservableObject {
             let getGenre: GenreResponse = try await service.fetchData(api: ApiConstructor(endpoint: .genre))
             self.genre = getGenre.genres
             
-//            if let genre = genre.first {
-//                selectedGenre = genre
-//            }
         } catch {
             self.errorMsg = "error: \(error)"
         }
@@ -71,9 +70,4 @@ class HomeViewModel: ObservableObject {
         }
 
     }
-    
-
-    
-    
-
 }

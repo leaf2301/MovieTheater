@@ -34,4 +34,5 @@ class DeveloperPreview {
     
     let genreInstance = Genre(id: 28, name: "Action")
 
+    let review = Review(author: "Test", authorDetails: nil, content: "TestContent", createAt: "TestCreateAt", id: "Test", updateAt: "Test", url: "Test")
 }

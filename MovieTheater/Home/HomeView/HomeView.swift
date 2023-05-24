@@ -23,15 +23,22 @@ struct HomeView: View {
             
             LazyVStack(alignment: .leading, spacing: 20) {
                 Text("What do you want to watch?")
+                    .bold()
+                    .padding(.horizontal)
                 
                 MovieSearchBar(txt: $searchText)
                 
-                Text(vm.errorMsg)
+                Text("Top Trending")
+                    .bold()
+                    .padding(.horizontal)
 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(vm.trendingMovies) {
-                            MovieCard(movie: $0, type: .poster)
+                        ForEach(vm.trendingMovies) { movie in
+                            MovieCard(movie: movie, type: .poster)
+                                .onTapGesture {
+                                    vm.selectedmovie = movie
+                                }
                         }
                     }
                 }
@@ -56,18 +63,19 @@ struct HomeView: View {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(vm.moviesForSelectedGenre) { movie in
                         MovieCard(movie: movie, type: .grid)
+                            .onTapGesture {
+                                vm.selectedmovie = movie
+                            }
                     }
                 }
             }
-            
-          
-            
-           
-
         }
         .preferredColorScheme(.dark)
         .padding()
         .background(Color.AppBackgroundColor)
+        .fullScreenCover(item: $vm.selectedmovie) { movie in
+            DetailView(movie: movie)
+        }
     }
 }
 
