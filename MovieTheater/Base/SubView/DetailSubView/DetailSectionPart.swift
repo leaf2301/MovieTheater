@@ -23,7 +23,7 @@ struct DetailSectionPart: View {
                         RoundedRectangle(cornerRadius: 10)
                             .frame(height: 3)
                             .offset(y: 20)
-                            .matchedGeometryEffect(id: "Detail", in:    namespace)
+                            .matchedGeometryEffect(id: "Detail", in: namespace)
                     }
                 }
             

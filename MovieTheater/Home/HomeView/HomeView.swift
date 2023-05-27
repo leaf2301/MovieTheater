@@ -16,7 +16,13 @@ struct HomeView: View {
     @StateObject var vm = HomeViewModel()
     
     @Namespace var namespace
- 
+    var filterMovie: [Movie] {
+        if searchText.count == 0 {
+            return vm.moviesForSelectedGenre
+        } else {
+            return vm.moviesForSelectedGenre.filter { $0.title.contains(searchText) }
+        }
+    }
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -61,13 +67,15 @@ struct HomeView: View {
                 }
                 
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(vm.moviesForSelectedGenre) { movie in
+                    ForEach(filterMovie) { movie in
                         MovieCard(movie: movie, type: .grid)
                             .onTapGesture {
                                 vm.selectedmovie = movie
                             }
+                        
                     }
                 }
+                .searchable(text: $searchText)
             }
         }
         .preferredColorScheme(.dark)
